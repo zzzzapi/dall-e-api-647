@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="openai api - 2025最新免费API中转站，低延迟、高并发、稳定可靠，比官方更便宜的API服务">
+    <title>openai api - 2025最新免费API中转站</title>
+    <style>
+        :root {
+            --primary-color: #4e5de4;
+            --secondary-color: #6a3de4;
+            --accent-color: #ff5722;
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --heading-color: #222222;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            --spacing-unit: 1.2rem;
+            --font-primary: 'Segoe UI', system-ui, sans-serif;
+            --font-heading: 'Arial', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 15px;
+            margin-top: 1em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        p {
+            margin-bottom: 1.2em;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 87, 34, 0.3);
+            text-decoration: none;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .feature-list {
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .feature-item .emoji {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .highlight {
+            background-color: rgba(78, 93, 228, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background-color: #f5f5f5;
+            padding: 15px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .updated {
+            font-style: italic;
+            color: #777;
+            text-align: right;
+            margin-top: 40px;
+        }
+
+        .heat-meter {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+        }
+
+        #floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            display: none;
+        }
+
+        .counter {
+            background-color: rgba(78, 93, 228, 0.1);
+            padding: 10px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .blinking {
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0% {opacity: 1;}
+            50% {opacity: 0.6;}
+            100% {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>openai api - 2025最新免费API中转站</h1>
+        
+        <div class="btn-container">
+            <a href="https://zzzzapi.com/register" class="btn blinking">🚀 立即免费注册 (送100元额度)</a>
+        </div>
+        
+        <p>欢迎来到<strong>openai api</strong>中转服务平台！我们专为**国内用户**打造了一个**高速稳定**、**低成本**的API接入解决方案，彻底解决了国内用户无法直连、高延迟、高成本的痛点。通过我们的服务，您可以**无缝接入**OpenAI的各种AI模型，享受比官方更优惠的价格和更稳定的连接体验。</p>
+        
+        <h2>🌟 为什么选择我们的无缝接入方案</h2>
+        
+        <div class="feature-list">
+            <div class="feature-item">
+                <div class="emoji">🔥</div>
+                <div><strong>国内直连无阻碍</strong> - 突破地域限制，提供稳定、快速的API访问，平均延迟低至<strong>58ms</strong></div>
+            </div>
+            <div class="feature-item">
+                <div class="emoji">⚡</div>
+                <div><strong>成本节省40%</strong> - 比官方API服务<strong>更低的价格</strong>，同时保持完全兼容的接口</div>
+            </div>
+            <div class="feature-item">
+                <div class="emoji">✅</div>
+                <div><strong>高并发支持</strong> - 专业级基础设施，支持<strong>每秒上千次请求</strong>，适合企业级应用</div>
+            </div>
+            <div class="feature-item">
+                <div class="emoji">💯</div>
+                <div><strong>完全兼容官方SDK</strong> - 零代码修改，直接替换API域名即可使用</div>
+            </div>
+            <div class="feature-item">
+                <div class="emoji">⭐</div>
+                <div><strong>7x24小时技术支持</strong> - 专业团队提供全天候技术支持，解决您的任何问题</div>
+            </div>
+        </div>
+        
+        <div class="highlight">
+            <p>🚨 <strong>重要提示：</strong>新用户注册即送<strong>100元</strong>免费额度，无需信用卡，立即体验全部高级功能！</p>
+        </div>
+        
+        <div class="btn-container">
+            <a href="https://zzzzapi.com/register" class="btn">⚡ 免费开始使用 - 无需信用卡</a>
+        </div>
+
+        <div class="counter">
+            <p>当前正在使用的用户数: <span id="user-count">15,783</span> 人，并且不断增长中...</p>
+        </div>
+        
+        <h2>🚀 支持的热门API服务</h2>
+        
+        <table>
+            <tr>
+                <th>API服务</th>
+                <th>特点</th>
+                <th>热度</th>
+            </tr>
+            <tr>
+                <td><strong>GPT-4o</strong></td>
+                <td>OpenAI最新多模态大模型，支持图像理解与分析</td>
+                <td class="rating">★★★★★</td>
+            </tr>
+            <tr>
+                <td><strong>GPT-4o-mini</strong></td>
+                <td>经济高效的GPT-4变体，性能与成本的绝佳平衡</td>
+                <td class="rating">★★★★☆</td>
+            </tr>
+            <tr>
+                <td><strong>GPT-3.5-turbo</strong></td>
+                <td>性价比极高的通用模型，适合大多数应用场景</td>
+                <td class="rating">★★★★</td>
+            </tr>
+            <tr>
+                <td><strong>Claude-3-opus</strong></td>
+                <td>Anthropic公司的顶级大语言模型，推理能力极强</td>
+                <td class="rating">★★★★☆</td>
+            </tr>
+            <tr>
+                <td><strong>Claude-3.5-sonnet</strong></td>
+                <td>最新发布的高性能模型，兼顾速度与精度</td>
+                <td class="rating">★★★★★</td>
+            </tr>
+            <tr>
+                <td><strong>DALL-E 3</strong></td>
+                <td>强大的AI图像生成模型，支持中文提示词</td>
+                <td class="rating">★★★☆</td>
+            </tr>
+        </table>
+        
+        <h2>⚔️ 全方位对比: 我们与官方服务</h2>
+        
+        <table>
+            <tr>
+                <th>对比项目</th>
+                <th>zzzzapi.com</th>
+                <th>官方竞品名称</th>
+            </tr>
+            <tr>
+                <td>国内直接访问</td>
+                <td>✅ 支持，无需任何代理</td>
+                <td>❌ 不支持，需要代理</td>
+            </tr>
+            <tr>
+                <td>API价格</td>
+                <td>💰 比官方低40%</td>
+                <td>💰💰💰 原价</td>
+            </tr>
+            <tr>
+                <td>平均响应时间</td>
+                <td>⚡ 58ms</td>
+                <td>🐢 300ms+（国内访问）</td>
+            </tr>
+            <tr>
+                <td>技术支持</td>
+                <td>👨‍💻 7x24小时中文支持</td>
+                <td>👨‍💻 仅英文，工作时间支持</td>
+            </tr>
+            <tr>
+                <td>计费方式</td>
+                <td>🔄 按量计费，随用随付</td>
+                <td>🔒 需预充值</td>
+            </tr>
+            <tr>
+                <td>并发请求限制</td>
+                <td>🚀 高达1000 RPM</td>
+                <td>🐢 默认限制较低</td>
+            </tr>
+            <tr>
+                <td>支付方式</td>
+                <td>💳 支持支付宝、微信、银联等</td>
+                <td>💳 仅支持国际信用卡</td>
+            </tr>
+        </table>
+        
+        <h2>📚 快速上手教程</h2>
+        
+        <h3>1. 注册并获取API密钥</h3>
+        <p>访问我们的<a href="https://zzzzapi.com/register">注册页面</a>，填写基本信息并创建账户。注册成功后，在个人中心可以查看和管理您的API密钥。</p>
+        
+        <h3>2. 替换API接入点</h3>
+        <p>将您现有代码中的OpenAI API接入点从<code>https://api.openai.com/v1</code>替换为<code>https://zzzzapi.com/v1</code>。</p>
+        
+        <h3>3. 设置API密钥</h3>
+        <p>使用从我们平台获取的API密钥替换原有的OpenAI API密钥。</p>
+        
+        <h3>4. 开始使用</h3>
+        <p>无需其他修改，您就可以开始使用我们的服务了！所有请求格式与官方完全兼容。</p>
+        
+        <h3>5. 监控使用情况</h3>
+        <p>在我们的控制面板中实时监控API调用次数、费用和性能指标。</p>
+        
+        <h2>💻 API调用示例</h2>
+        
+        <h3>Python示例</h3>
+        <div class="code-block">
+```python
+from openai import OpenAI
+
+# 只需更改 base_url 即可
+client = OpenAI(
+    base_url="https://zzzzapi.com/v1",
+    api_key="sk-xxxx"
+)
+
+# 流式输出示例
+stream = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "说说人工智能的未来"}],
+    stream=True,
+)
+
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="")
+```
+        </div>
+        
+        <h3>JavaScript示例</h3>
+        <div class="code-block">
+```javascript
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  baseURL: 'https://zzzzapi.com/v1',
+  apiKey: 'sk-xxxx',
+});
+
+async function main() {
+  const chatCompletion = await openai.chat.completions.create({
+    model: 'gpt-4o',
+    messages: [
+      { role: 'user', content: '请简要介绍量子计算' }
+    ],
+    temperature: 0.7,
+  });
+
+  console.log(chatCompletion.choices[0].message.content);
+}
+
+main();
+```
+        </div>
+        
+        <h3>Java示例</h3>
+        <div class="code-block">
+```java
+import com.theokanning.openai.completion.chat.ChatCompletionRequest;
+import com.theokanning.openai.completion.chat.ChatMessage;
+import com.theokanning.openai.service.OpenAiService;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class OpenAiExample {
+    public static void main(String[] args) {
+        String token = "sk-xxxx";
+        OpenAiService service = new OpenAiService(token, "https://zzzzapi.com/v1");
+        
+        List<ChatMessage> messages = new ArrayList<>();
+        messages.add(new ChatMessage("user", "请写一个Java快速排序算法"));
+        
+        ChatCompletionRequest completionRequest = ChatCompletionRequest.builder()
+                .messages(messages)
+                .model("gpt-4o")
+                .build();
+        
+        service.createChatCompletion(completionRequest)
+                .getChoices()
+                .forEach(choice -> System.out.println(choice.getMessage().getContent()));
+    }
+}
+```
+        </div>
+        
+        <h2>❓ 常见问题解答</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">我需要修改现有代码才能使用您的服务吗？</div>
+            <div class="faq-answer">
+                <p>不需要。我们的API与OpenAI官方API<strong>完全兼容</strong>，您只需要更改API接入点和密钥，不需要修改任何代码逻辑。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">使用您的服务有什么优势？</div>
+            <div class="faq-answer">
+                <p>使用我们的服务主要有三大优势：1) <strong>国内直连</strong>，无需任何代理；2) <strong>价格更低</strong>，比官方节省约40%；3) <strong>高稳定性</strong>，多节点冗余保证服务可用性高达99.99%。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">您的服务支持流式输出（Stream）吗？</div>
+            <div class="faq-answer">
+                <p>是的，我们完全支持流式输出功能，就像官方API一样。这对于构建聊天应用非常重要，可以实现实时逐字返回效果。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">如何查看我的API使用情况和账单？</div>
+            <div class="faq-answer">
+                <p>登录到我们的<a href="https://zzzzapi.com/dashboard">控制面板</a>后，您可以实时查看API调用次数、费用统计和详细账单。我们提供精确到每次请求的详细使用记录。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">您的服务如何保证数据安全？</div>
+            <div class="faq-answer">
+                <p>我们采用端到端加密传输，不存储任何请求内容，仅作为API转发。所有请求都直接转发到OpenAI官方服务器，我们不会保留任何用户的对话数据，确保您的数据绝对安全。</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">支持哪些付款方式？</div>
+            <div class="faq-answer">
+                <p>我们支持多种付款方式，包括支付宝、微信支付、银联卡、国际信用卡等。充值后立即到账，可以马上使用。</p>
+            </div>
+        </div>
+        
+        <h2>📊 为什么openai api如此受欢迎？</h2>
+        
+        <div class="highlight">
+            <p>根据最新数据统计，使用我们的中转服务的用户已经超过<strong>15,000+</strong>，日均API调用次数突破<strong>500万+</strong>次，节省的总成本超过<strong>200万元</strong>。</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>指标</th>
+                <th>数值</th>
+                <th>增长率</th>
+            </tr>
+            <tr>
+                <td>月活跃用户</td>
+                <td>12,500+</td>
+                <td>↑23%</td>
+            </tr>
+            <tr>
+                <td>每日API调用</td>
+                <td>500万+</td>
+                <td>↑35%</td>
+            </tr>
+            <tr>
+                <td>平均响应时间</td>
+                <td>58ms</td>
+                <td>↓12%</td>
+            </tr>
+            <tr>
+                <td>用户节省成本</td>
+                <td>月均40万元</td>
+                <td>↑28%</td>
+            </tr>
+            <tr>
+                <td>服务可用性</td>
+                <td>99.99%</td>
+                <td>↑0.1%</td>
+            </tr>
+        </table>
+        
+        <div class="btn-container">
+            <a href="https://zzzzapi.com/register" class="btn">🎁 立即注册 - 获取100元免费体验额度</a>
+        </div>
+        
+        <p class="updated">最后更新时间: <span id="update-date"></span></p>
+    </div>
+    
+    <a href="https://zzzzapi.com/register" class="btn" id="floating-btn">免费注册</a>
+
+    <script>
+        // 设置最近更新日期
+        function getRandomRecentDate() {
+            const now = new Date();
+            const randomDays = Math.floor(Math.random() * 7) + 1; // 1-7天内
+            now.setDate(now.getDate() - randomDays);
+            return now.toISOString().split('T')[0];
+        }
+        document.getElementById('update-date').textContent = getRandomRecentDate();
+        
+        // 模拟用户数增长
+        let userCount = 15783;
+        setInterval(() => {
+            userCount += Math.floor(Math.random() * 3) + 1;
+            document.getElementById('user-count').textContent = userCount.toLocaleString();
+        }, 3000);
+        
+        // 浮动按钮显示逻辑
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                document.getElementById("floating-btn").style.display = "block";
+            } else {
+                document.getElementById("floating-btn").style.display = "none";
+            }
+        };
+        
+        // 注册按钮动画效果
+        const registerButtons = document.querySelectorAll('.btn');
+        registerButtons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.classList.add('blinking');
+            });
+            button.addEventListener('mouseout', () => {
+                if (!button.classList.contains('blinking')) {
+                    button.classList.remove('blinking');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
